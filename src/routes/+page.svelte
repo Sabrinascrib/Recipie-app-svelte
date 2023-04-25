@@ -1,2 +1,15 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+  // import ramen from '/assets/ramen.png';
+
+  import { onMount } from "svelte";
+  let searchInputTxt = "";
+  export let animes = [];
+  onMount(() => {
+    fetch(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`
+    )
+      .then((response) => response.json())
+      .then((result) => (animes = result.data));
+    // .then(result => console.log(result.data))
+  });
+</script>
