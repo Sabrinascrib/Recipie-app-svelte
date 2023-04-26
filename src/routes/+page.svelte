@@ -9,7 +9,7 @@
       `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`
     )
       .then((response) => response.json())
-      .then((result) => (animes = result.data));
-    // .then(result => console.log(result.data))
+      .then((result) => (animes = result.data))
+      .then((result) => console.log(result.data));
   });
 </script>
