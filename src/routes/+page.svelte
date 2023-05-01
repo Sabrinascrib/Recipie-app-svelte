@@ -69,13 +69,12 @@
               {meal.strMeal}
             </h3>
             <p class="mt-1 text-sm text-gray-600">{meal.strCategory}</p>
-            <button
-              type="button"
+            <a
+              href={`/meal/${meal.idMeal}`}
               class="mt-2 bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded transition duration-150 ease-in-out focus:outline-none focus:shadow-outline"
-              on:click={() => dispatch("selectMeal", meal.idMeal)}
             >
               View Recipe
-            </button>
+            </a>
           </div>
         </div>
       {/each}
