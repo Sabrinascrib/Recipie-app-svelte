@@ -5,8 +5,6 @@
   let searchInputTxt = "";
   let meals = [];
 
-  const dispatch = createEventDispatcher();
-
   async function fetchMeals() {
     const response = await fetch(
       `https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`
@@ -15,12 +13,14 @@
     meals = data.meals;
   }
 
-  function handleSearch(event) {
+  async function handleSearch(event) {
     event.preventDefault();
-    fetchMeals();
+    await fetchMeals();
   }
 
-  onMount(fetchMeals);
+  onMount(async () => {
+    await fetchMeals();
+  });
 </script>
 
 <main class="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -57,21 +57,21 @@
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {#each meals as meal (meal.idMeal)}
         <div
-          class="bg-white rounded-lg shadow hover:shadow-xl overflow-hidden transition duration-150 ease-in-out transform hover:-translate-y-2"
+          class="bg-white rounded-lg shadow hover:shadow-xl overflow-hidden transition duration-150 ease-in-out transform hover:-translate-y-2 flex flex-col gap-2"
         >
           <img
             class="h-64 w-full object-cover"
             src={meal.strMealThumb}
             alt={meal.strMeal}
           />
-          <div class="p-8">
+          <div class="p-2">
             <h3 class="text-lg font-medium text-gray-900 truncate">
               {meal.strMeal}
             </h3>
-            <p class="mt-1 text-sm text-gray-600">{meal.strCategory}</p>
+
             <a
               href={`/meal/${meal.idMeal}`}
-              class="mt-2 bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded transition duration-150 ease-in-out focus:outline-none focus:shadow-outline"
+              class="mt-2 bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded transition duration-150 ease-in-out focus:outline-none focus:shadow-outline flex flex-col gap-3"
             >
               View Recipe
             </a>
