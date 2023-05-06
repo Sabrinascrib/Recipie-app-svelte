@@ -1,12 +1,16 @@
 /** @type {import('./$types').PageLoad} */
 
 export async function load({ fetch, params }) {
-  const res = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/filter.php?i=${params.slug}`
+  const response = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.slug}`
   );
-  const meal = await res.json();
 
-  console.log(meal);
+  const data = await response.json();
+  const meals = data.meals;
+
+  const meal = meals[0];
+
+  console.log({ meal });
 
   return {
     meal,
