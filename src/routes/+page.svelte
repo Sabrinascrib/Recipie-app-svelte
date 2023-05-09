@@ -25,6 +25,7 @@
 
 <main class="bg-green-50">
   <div class=" max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <h1 class="uppercase text-center text-4xl">Cookspire</h1>
     <form on:submit={handleSearch} class="mb-8 sm:mb-12">
       <div class="flex">
         <input
@@ -58,7 +59,7 @@
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {#each meals as meal (meal.idMeal)}
           <div
-            class="bg-white p-5 rounded-lg shadow hover:shadow-xl overflow-hidden transition duration-150 ease-in-out transform hover:-translate-y-2 flex flex-col gap-2"
+            class="bg-white p-5 rounded-lg shadow-sm overflow-hidden transition duration-150 ease-in-out transform hover:-translate-y-1 flex flex-col gap-2"
           >
             <img
               class="h-64 w-full object-cover rounded-lg"
@@ -66,7 +67,7 @@
               alt={meal.strMeal}
             />
             <div class="p-2">
-              <h3 class="text-lg font-medium text-gray-950 truncate">
+              <h3 class="text-lg font-medium uppercase text-gray-950 truncate">
                 {meal.strMeal}
               </h3>
 
@@ -89,12 +90,15 @@
 </main>
 
 <style>
-  .heading {
+  a,
+  p {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
   }
 
-  .text {
+  h1,
+  h2,
+  h3 {
     font-family: "Darumadrop One", cursive;
   }
 </style>
