@@ -14,9 +14,9 @@
     />
 
     <div class="p-2">
-      <h2 class="text-xl font-medium text-gray-900 mb-3">
+      <h3 class="text-xl font-medium text-gray-900 mb-3">
         {data.meal.strMeal}
-      </h2>
+      </h3>
       <div class="flex flex-row">
         <p class=" mb-2 text-white rounded bg-gray-800 p-2 mr-3">
           {data.meal.strArea}
