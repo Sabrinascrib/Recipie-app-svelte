@@ -77,7 +77,7 @@
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {#each meals as meal (meal.idMeal)}
           <div
-            class="bg-white p-5 rounded-sm-lg shadow-sm overflow-hidden transition duration-150 ease-in-out transform hover:-translate-y-1 flex flex-col gap-2"
+            class="bg-white m-5 rounded-sm-lg shadow-sm overflow-hidden transition duration-150 ease-in-out transform hover:-translate-y-1 flex flex-col gap-2"
           >
             <img
               class="h-64 w-full object-cover rounded-sm-lg"
@@ -106,6 +106,14 @@
     {/if}
   </div>
 </main>
+
+<footer class="bg-green-50">
+  <p class="text-center text-green-800 py-20">
+    Build by <a href="https://github.com/Sabrinascrib" class=""
+      >Sabrina Abrodi</a
+    >
+  </p>
+</footer>
 
 <style>
   a,
