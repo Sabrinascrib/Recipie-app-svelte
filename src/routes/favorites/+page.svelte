@@ -2,7 +2,9 @@
   import { favoriteMeals, removeFromFavorites } from "../favoritesStore.js";
 </script>
 
-<a href="/"> <h1 class="uppercase text-center text-[60px]">Cookspire</h1></a>
+<a href="/">
+  <h1 class="uppercase text-center text-[60px]">Cookspire</h1>
+</a>
 
 <p class="text-center text-[17.5px] mb-16">Cook with whatever you got home!</p>
 
@@ -10,7 +12,7 @@
 
 {#if $favoriteMeals.length > 0}
   {#each $favoriteMeals as meal, index (meal.idMeal)}
-    <div key={meal.name}>
+    <div key={meal.idMeal}>
       <img
         class="h-64 w-full object-cover rounded-sm-lg"
         src={meal.strMealThumb}
@@ -28,9 +30,7 @@
 
 <footer class="bg-green-50">
   <p class="text-center text-green-800 py-20">
-    Build by <a href="https://github.com/Sabrinascrib" class=""
-      >Sabrina Abrodi</a
-    >
+    Build by <a href="https://github.com/Sabrinascrib">Sabrina Abrodi</a>
   </p>
 </footer>
 
