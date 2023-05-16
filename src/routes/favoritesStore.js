@@ -23,9 +23,16 @@ favoriteMeals.subscribe((value) => {
 
 // Add a meal to the favorite meals
 export function addToFavorites(meal) {
-  favoriteMeals.update((meals) => [...meals, meal]);
+  favoriteMeals.update((meals) => {
+    // Checking if the meal already exists in the array
+    const existingMeal = meals.find((m) => m.idMeal === meal.idMeal);
+    if (existingMeal) {
+      return meals;
+    } else {
+      return [...meals, meal];
+    }
+  });
 }
-
 // Remove a meal from the favorite meals
 export function removeFromFavorites(meal) {
   favoriteMeals.update((meals) =>
