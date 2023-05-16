@@ -1,7 +1,6 @@
 <script>
   import { onMount } from "svelte";
   import { createEventDispatcher } from "svelte";
-  import { favoriteMeals } from "./favoritesStore";
   import { addToFavorites } from "./favoritesStore";
 
   let searchInputTxt = "";
@@ -80,7 +79,7 @@
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {#each meals as meal (meal.idMeal)}
           <div
-            class="bg-white m-5 rounded-sm-lg shadow-sm overflow-hidden transition duration-150 ease-in-out transform hover:-translate-y-1 flex flex-col gap-2"
+            class="bg-white m-5 rounded-sm shadow-sm overflow-hidden transition duration-150 ease-in-out transform hover:-translate-y-1 flex flex-col gap-2"
           >
             <img
               class="h-64 w-full object-cover rounded-sm-lg"
