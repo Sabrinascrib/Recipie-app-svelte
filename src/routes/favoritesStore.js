@@ -33,9 +33,9 @@ export function addToFavorites(meal) {
     }
   });
 }
-// Remove a meal from the favorite meals
-export function removeFromFavorites(meal) {
-  favoriteMeals.update((meals) =>
-    meals.filter((m) => m.idMeal !== meal.idMeal)
-  );
+export function removeFromFavorites(index) {
+  favoriteMeals.update((meals) => {
+    meals.splice(index, 1);
+    return meals;
+  });
 }
